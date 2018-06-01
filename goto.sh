@@ -117,7 +117,7 @@ _goto_version()
 # Helpful for ~, ., .. paths
 _goto_expand_directory()
 {
-  cd "$1" 2>/dev/null && pwd
+  \cd "$1" 2>/dev/null && pwd
 }
 
 # Lists registered aliases.
@@ -260,7 +260,7 @@ _goto_directory()
 
   target=$(_goto_resolve_alias "$1") || return 1
 
-  cd "$target" 2> /dev/null || \
+  \cd "$target" 2> /dev/null || \
     { _goto_error "Failed to goto '$target'" && return 1; }
 }
 
